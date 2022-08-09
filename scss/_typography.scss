@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+@import 'variables';
+
+$font-weights:(
+    "light": 300,
+    "regular":400,
+    "bold":600
+);
+
+body{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 16px;
+}
+
+@function weight($weight-name){
+    @return map-get($font-weights, $weight-name);
+}
+
+
+.pink{
+    color:$Desaturated-Red;
+    font-weight: weight(bold);
+    h1 & {
+        font-weight: weight(light);
+    }
+   
+}
+
+h1{
+    font-size: 3.6rem;
+    font-weight: weight(bold);
+    text-transform: uppercase;
+    letter-spacing: 0.8rem;
+    line-height: 4rem;
+    color:$Dark-Grayish-Red;
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+}
+
+p{
+    line-height: 1.7rem;
+    letter-spacing: 0.05rem;
+    margin-bottom: 3rem;
+}
+
+form{
+    position: relative;
+}
+
+input[type="email"]{
+    outline: none;
+    border: 1px solid $Desaturated-Red;
+    font:inherit;
+    background-color: transparent;
+    padding: 20px 40px;
+    width: 100%;
+    border-radius: 40px;
+    color: $Desaturated-Red;
+    position: relative;
+    font-weight: weight(light);
+    background-color: $gradient-white;
+}
+
+button[type="submit"]{
+    width:100px;
+    height:58px;
+    border-radius: 40px;
+    background: url('../images/icon-arrow.svg') no-repeat ,$gradient-pink;
+    background-position: center;
+    border:none;
+    cursor: pointer;
+    box-shadow: 0 10px 15px -5px $Desaturated-Red;
+    align-self: flex-end;
+    position: absolute;
+    right: 0;
+}
+
+.er-icon{
+    background: url('../images/icon-error.svg') no-repeat;
+    width:25px;
+    height: 25px;
+    position: absolute;
+    right: 120px;
+    top:16px;
+    display: none;
+}
+
+.er-message{
+    display: none;
+    color:$Soft-Red;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
