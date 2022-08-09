@@ -5,6 +5,7 @@
 body{
     height: 100vh;
     background: $gradient-white;
+    overflow: hidden;
 }
 
 .background{
@@ -50,6 +51,11 @@ form{
 }
 
 @media screen and(max-width: 700px) {
+
+    body{
+        overflow: scroll;
+    }
+
     main{
         grid-template-columns: repeat(1, 1fr);    
         grid-template-rows: repeat(12, 80px); 
